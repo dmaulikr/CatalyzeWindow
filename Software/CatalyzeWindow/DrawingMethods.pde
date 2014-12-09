@@ -7,6 +7,15 @@ drawTestImage()
 doAveraging()
 */
 
+/*
+
+
+BOUNCE
+draws a circle and bounces it around the screen
+
+
+*/
+
 int rad = 40;        // Width of the shape
 float xpos, ypos;    // Starting position of shape    
 
@@ -54,6 +63,12 @@ void drawVideo(){
 
 
 
+/*
+
+BOUNCY BALLS
+a whole bunch of bouncy balls!
+
+*/
 
 
 int numBalls = 12;
@@ -142,7 +157,12 @@ class Ball {
 
 
 
+/*
 
+DO AVERAGING
+Averages color for a glass brick instead of allowing for individual pixel control
+
+*/
 
 
 
@@ -150,7 +170,6 @@ class Ball {
 void doAveraging(){
   int widthSpacing = width/32;
   int heightSpacing = height/6;
-  
   color[] avg = new color[widthSpacing*heightSpacing];
   
   //Average Pixels
@@ -188,11 +207,28 @@ void doAveraging(){
   }
 }
 
+
+
+/*
+
+TEST IMAGE
+draw surprise cat
+
+*/
+
+
 void drawTestImage(){
  PImage testImage = loadImage("cat.jpeg");
  image(testImage, 0, 0, width, height); 
 }
 
+
+/*
+
+DRAW GRID
+draw a box around each glass cube
+
+*/
 
 void drawGrid(){
  stroke(128,128,255);
@@ -205,6 +241,14 @@ void drawGrid(){
    line(0, horizontalSpacing*y, width, horizontalSpacing*y);
  }
 }
+
+/*
+
+DRAW MOUSE
+
+Draw when the mouse is clicked, no background calls allowed
+
+*/
 
 int mouseValue = 0;
 
@@ -221,7 +265,19 @@ void mouseClicked() {
   }
 }
 
-void drawImage() {
+
+/*
+
+DRAW IMAGE
+scroll an image across the window
+
+*/
+
+int offset = 0;
+int counter = 0;
+
+
+void drawImage(PImage inputImg) {
   background(0);
   // Scale the image so that it matches the width of the window
   //int imHeight = inputImg.height * width / inputImg.height;
@@ -236,7 +292,14 @@ void drawImage() {
 }
 
 
-void drawText() {
+/*
+
+DRAW TEXT
+Draw a text image
+
+*/
+
+void drawText(PImage inputImg) {
   counter++;
   if (counter >= 12) {
     counter = 0;
@@ -270,20 +333,5 @@ void drawText() {
     }
   }
 
-}
-
-PShader effect;
-
-void setupRing(){
-   effect = loadShader("effect.glsl");
-  effect.set("resolution", float(width), float(height));
-}
-
-void drawRing(){
-    effect.set("time", millis() / 1000.0);
-  effect.set("hue", float(mouseX) / width);
-  shader(effect);
-  rect(0, 0, width, height);
-  resetShader();
 }
 

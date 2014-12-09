@@ -1,35 +1,42 @@
+//FadeCandy
 OPC opc;
+//Video
 import processing.video.*;
 Capture video;
+//Networking
+import hypermedia.net.*;
+UDP server;
 
-PImage inputImg;
-
-int offset = 0;
-int counter = 0;
 
 void setup() {
+  //Drawing Setup
   size(2000, 380, P2D);
   frameRate(10);
   noStroke();
   
-  inputImg = loadImage("catalyze_FLIP5.png");
-  
+  //FadeCandy Setup
   opc = new OPC(this, "192.168.1.37", 7890);
   setupMapping();
+  
+  //Setup UDP Server
+  setupServer();
   
   //setupGameOfLife();
   //setupBounce();
   //setupBouncyBubbles();
-  setupVideo();
+  //setupVideo();
+  
+  //Set the background to black
   background(0);
 }
 
 void draw() {
   background(0);
+  parseMatrix();
   //drawMouse();
-  drawVideo();
+  //drawVideo();
   //drawBouncyBubbles();
-  //drawImage();
+  //drawImage(loadImage("greenflame.jpeg"));
   //drawText();
   //drawTestImage();
   //drawGameOfLife();
