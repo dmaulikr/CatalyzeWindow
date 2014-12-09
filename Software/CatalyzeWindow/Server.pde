@@ -114,7 +114,7 @@ void receive( byte[] data, String ip, int port ) {
       Adds client to client dictionary for transmitting data to 
     */
     clientDictionary.set(ip, (""+millis()));
-  }else if(message.equals("r!")){
+  }else if(message.equals("x!")){
    /*
       Remove Client
       Removes client from clientDictionary so they're not sent matrix info any longer
