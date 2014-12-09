@@ -86,6 +86,9 @@ void setupMapping(){
 //  // (LLNXGUVTXHIHSRAB)
   opc.ledStrip(2858, 52, ((52*spacing)/2+(columLoc*27)) + 6, RowHeight*4-rowNudge, spacing, 0, true);
   opc.ledStrip(2806, 40, ((40*spacing)/2+(columLoc*30)) + 2, RowHeight*4-rowNudge, spacing, 0, false);
+  //(HXFDYEGULDMDKVOV)
+  opc.ledStrip(3294, 18, ((18*spacing)/2+(columLoc*17)) + 2, RowHeight*4-rowNudge, spacing, 0, true);
+  opc.ledStrip(3314, 52, ((52*spacing)/2+(columLoc*18)) + 2, RowHeight*4-rowNudge, spacing, 0, false);
   
   
    
@@ -105,7 +108,10 @@ void setupMapping(){
 //  // (LLNXGUVTXHIHSRAB)
   opc.ledStrip(2962, 52, ((52*spacing)/2+(columLoc*27)) + 6, RowHeight*5-rowNudge, spacing, 0, true);
   opc.ledStrip(2910, 40, ((40*spacing)/2+(columLoc*30)) + 3, RowHeight*5-rowNudge, spacing, 0, false);
-   
+   //(HXFDYEGULDMDKVOV)
+   opc.ledStrip(3418, 18, ((18*spacing)/2+(columLoc*17)) + 2, RowHeight*5-rowNudge, spacing, 0, true);
+  opc.ledStrip(3366, 52, ((52*spacing)/2+(columLoc*18)) + 2, RowHeight*5-rowNudge, spacing, 0, false);
+  
    
    
    
@@ -125,5 +131,10 @@ void setupMapping(){
 //  // (LLNXGUVTXHIHSRAB)
   opc.ledStrip(3118, 52, ((52*spacing)/2+(columLoc*27)) + 6, (RowHeight*6)-rowNudge, spacing, 0, true);
   opc.ledStrip(3170, 40, ((40*spacing)/2+(columLoc*30)) + 2, (RowHeight*6)-rowNudge, spacing, 0, false);
+  //(HXFDYEGULDMDKVOV)
+  opc.ledStrip(3222, 18, ((18*spacing)/2+(columLoc*17)) + 2, RowHeight*6-rowNudge, spacing, 0, false);
+  opc.ledStrip(3242, 52, ((52*spacing)/2+(columLoc*18)) + 6, RowHeight*6-rowNudge, spacing, 0, false);
+  
+  
   
 }
