@@ -206,30 +206,39 @@ void drawGrid(){
  }
 }
 
+int mouseValue = 0;
 
 void drawMouse() {
-  background(0);
-  stroke(255);
-  rect(mouseX, mouseY, 10, 40);
+  fill(mouseValue);
+  rect(mouseX-25, mouseY-25, 50, 50);
+}
+
+void mouseClicked() {
+  if (mouseValue == 0) {
+    mouseValue = 255;
+  } else {
+    mouseValue = 0;
+  }
 }
 
 void drawImage() {
   background(0);
   // Scale the image so that it matches the width of the window
-  int imHeight = inputImg.height * width / inputImg.height;
+  //int imHeight = inputImg.height * width / inputImg.height;
   //
   //  // Scroll down slowly, and wrap around
   float speed = 0.05;
-  float y = (millis() * -speed) % imHeight;
+  float y = (millis() * -speed) % height;
 
   // Use two copies of the image, so it seems to repeat infinitely  
-  image(inputImg, y, 0, width, imHeight);
-  image(inputImg, y + imHeight, 0, width, imHeight);
+  image(inputImg, y, 0, width, height);
+  image(inputImg, y + height, 0, width, height);
 }
+
 
 void drawText() {
   counter++;
-  if (counter >= 30) {
+  if (counter >= 12) {
     counter = 0;
     offset+=1; 
     if (16+offset>=inputImg.width) {
@@ -240,7 +249,7 @@ void drawText() {
 
 
 
-  background(0);
+
   int rwidth = width/16;
   int rheight = height/6;
 
@@ -250,16 +259,31 @@ void drawText() {
 
   for (int iw = 0; iw < inputImg.width; iw++) {
     for (int ih = 0; ih < inputImg.height; ih++) {
-
+      
       int xx =   (int)   map(iw, 16+offset, offset, 0, width);
       int yy =   (int)   map(ih, 0, inputImg.height, 0, height);
 
       color C = inputImg.pixels[(ih*inputImg.width)+iw];
 
       fill(C);
-      stroke(0);
       rect(xx, yy+2, rwidth, rheight);
     }
   }
+
+}
+
+PShader effect;
+
+void setupRing(){
+   effect = loadShader("effect.glsl");
+  effect.set("resolution", float(width), float(height));
+}
+
+void drawRing(){
+    effect.set("time", millis() / 1000.0);
+  effect.set("hue", float(mouseX) / width);
+  shader(effect);
+  rect(0, 0, width, height);
+  resetShader();
 }
 
