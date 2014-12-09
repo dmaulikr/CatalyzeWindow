@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13536F821A37565800815506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13536F811A37565800815506 /* main.m */; };
+		13536F851A37565800815506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13536F841A37565800815506 /* AppDelegate.m */; };
+		13536F881A37565800815506 /* Glass.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13536F861A37565800815506 /* Glass.xcdatamodeld */; };
+		13536F8E1A37565800815506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13536F8C1A37565800815506 /* Main.storyboard */; };
+		13536F901A37565800815506 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13536F8F1A37565800815506 /* Images.xcassets */; };
+		13536F931A37565800815506 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13536F911A37565800815506 /* LaunchScreen.xib */; };
+		13536F9F1A37565800815506 /* GlassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13536F9E1A37565800815506 /* GlassTests.m */; };
+		1392BDD11A376167004305AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDD01A376167004305AA /* ViewController.m */; };
+		1392BDD61A3761C0004305AA /* MSGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDD31A3761C0004305AA /* MSGridView.m */; };
+		1392BDD71A3761C0004305AA /* MSGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDD51A3761C0004305AA /* MSGridViewCell.m */; };
+		1392BDEA1A376E42004305AA /* HRBrightnessCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDDB1A376E42004305AA /* HRBrightnessCursor.m */; };
+		1392BDEB1A376E42004305AA /* HRBrightnessSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDDD1A376E42004305AA /* HRBrightnessSlider.m */; };
+		1392BDEC1A376E42004305AA /* HRColorCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDDF1A376E42004305AA /* HRColorCursor.m */; };
+		1392BDED1A376E42004305AA /* HRColorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDE11A376E42004305AA /* HRColorInfoView.m */; };
+		1392BDEE1A376E42004305AA /* HRColorMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDE31A376E42004305AA /* HRColorMapView.m */; };
+		1392BDEF1A376E42004305AA /* HRColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDE51A376E42004305AA /* HRColorPickerView.m */; };
+		1392BDF01A376E42004305AA /* HRHSVColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDE71A376E42004305AA /* HRHSVColorUtil.m */; };
+		1392BDF11A376E42004305AA /* UIImage+CoreGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDE91A376E42004305AA /* UIImage+CoreGraphics.m */; };
+		1392BDF41A37704C004305AA /* HRSampleColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDF31A37704C004305AA /* HRSampleColorPickerViewController.m */; };
+		1392BDF71A377D5C004305AA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDF61A377D5C004305AA /* GCDAsyncUdpSocket.m */; };
+		1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDFD1A377DE2004305AA /* NetworkManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13536F991A37565800815506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13536F741A37565800815506 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13536F7B1A37565800815506;
+			remoteInfo = Glass;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13536F7C1A37565800815506 /* Glass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13536F801A37565800815506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13536F811A37565800815506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13536F831A37565800815506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		13536F841A37565800815506 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		13536F871A37565800815506 /* Glass.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Glass.xcdatamodel; sourceTree = "<group>"; };
+		13536F8D1A37565800815506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		13536F8F1A37565800815506 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		13536F921A37565800815506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		13536F981A37565800815506 /* GlassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13536F9D1A37565800815506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13536F9E1A37565800815506 /* GlassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlassTests.m; sourceTree = "<group>"; };
+		1392BDCF1A376167004305AA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1392BDD01A376167004305AA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1392BDD21A3761C0004305AA /* MSGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridView.h; sourceTree = "<group>"; };
+		1392BDD31A3761C0004305AA /* MSGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridView.m; sourceTree = "<group>"; };
+		1392BDD41A3761C0004305AA /* MSGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridViewCell.h; sourceTree = "<group>"; };
+		1392BDD51A3761C0004305AA /* MSGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridViewCell.m; sourceTree = "<group>"; };
+		1392BDDA1A376E42004305AA /* HRBrightnessCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRBrightnessCursor.h; sourceTree = "<group>"; };
+		1392BDDB1A376E42004305AA /* HRBrightnessCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRBrightnessCursor.m; sourceTree = "<group>"; };
+		1392BDDC1A376E42004305AA /* HRBrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRBrightnessSlider.h; sourceTree = "<group>"; };
+		1392BDDD1A376E42004305AA /* HRBrightnessSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRBrightnessSlider.m; sourceTree = "<group>"; };
+		1392BDDE1A376E42004305AA /* HRColorCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorCursor.h; sourceTree = "<group>"; };
+		1392BDDF1A376E42004305AA /* HRColorCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorCursor.m; sourceTree = "<group>"; };
+		1392BDE01A376E42004305AA /* HRColorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorInfoView.h; sourceTree = "<group>"; };
+		1392BDE11A376E42004305AA /* HRColorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorInfoView.m; sourceTree = "<group>"; };
+		1392BDE21A376E42004305AA /* HRColorMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorMapView.h; sourceTree = "<group>"; };
+		1392BDE31A376E42004305AA /* HRColorMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorMapView.m; sourceTree = "<group>"; };
+		1392BDE41A376E42004305AA /* HRColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorPickerView.h; sourceTree = "<group>"; };
+		1392BDE51A376E42004305AA /* HRColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorPickerView.m; sourceTree = "<group>"; };
+		1392BDE61A376E42004305AA /* HRHSVColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRHSVColorUtil.h; sourceTree = "<group>"; };
+		1392BDE71A376E42004305AA /* HRHSVColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRHSVColorUtil.m; sourceTree = "<group>"; };
+		1392BDE81A376E42004305AA /* UIImage+CoreGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CoreGraphics.h"; sourceTree = "<group>"; };
+		1392BDE91A376E42004305AA /* UIImage+CoreGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CoreGraphics.m"; sourceTree = "<group>"; };
+		1392BDF21A37704C004305AA /* HRSampleColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HRSampleColorPickerViewController.h; path = ../HRSampleColorPickerViewController.h; sourceTree = "<group>"; };
+		1392BDF31A37704C004305AA /* HRSampleColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HRSampleColorPickerViewController.m; path = ../HRSampleColorPickerViewController.m; sourceTree = "<group>"; };
+		1392BDF51A377D5C004305AA /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		1392BDF61A377D5C004305AA /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		1392BDFC1A377DE2004305AA /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		1392BDFD1A377DE2004305AA /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13536F791A37565800815506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13536F951A37565800815506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13536F731A37565800815506 = {
+			isa = PBXGroup;
+			children = (
+				13536F7E1A37565800815506 /* Glass */,
+				13536F9B1A37565800815506 /* GlassTests */,
+				13536F7D1A37565800815506 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13536F7D1A37565800815506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13536F7C1A37565800815506 /* Glass.app */,
+				13536F981A37565800815506 /* GlassTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13536F7E1A37565800815506 /* Glass */ = {
+			isa = PBXGroup;
+			children = (
+				13536F831A37565800815506 /* AppDelegate.h */,
+				13536F841A37565800815506 /* AppDelegate.m */,
+				1392BDF91A377D73004305AA /* View Controllers */,
+				1392BDF81A377D6D004305AA /* Networking */,
+				1392BDFB1A377D88004305AA /* Data Model */,
+				1392BDFA1A377D7F004305AA /* User Interface */,
+				13536F7F1A37565800815506 /* Supporting Files */,
+			);
+			path = Glass;
+			sourceTree = "<group>";
+		};
+		13536F7F1A37565800815506 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13536F801A37565800815506 /* Info.plist */,
+				13536F811A37565800815506 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13536F9B1A37565800815506 /* GlassTests */ = {
+			isa = PBXGroup;
+			children = (
+				13536F9E1A37565800815506 /* GlassTests.m */,
+				13536F9C1A37565800815506 /* Supporting Files */,
+			);
+			path = GlassTests;
+			sourceTree = "<group>";
+		};
+		13536F9C1A37565800815506 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13536F9D1A37565800815506 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1392BDD81A37625C004305AA /* MSGridView */ = {
+			isa = PBXGroup;
+			children = (
+				1392BDD21A3761C0004305AA /* MSGridView.h */,
+				1392BDD31A3761C0004305AA /* MSGridView.m */,
+				1392BDD41A3761C0004305AA /* MSGridViewCell.h */,
+				1392BDD51A3761C0004305AA /* MSGridViewCell.m */,
+			);
+			name = MSGridView;
+			sourceTree = "<group>";
+		};
+		1392BDD91A376E42004305AA /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1392BDF21A37704C004305AA /* HRSampleColorPickerViewController.h */,
+				1392BDF31A37704C004305AA /* HRSampleColorPickerViewController.m */,
+				1392BDDA1A376E42004305AA /* HRBrightnessCursor.h */,
+				1392BDDB1A376E42004305AA /* HRBrightnessCursor.m */,
+				1392BDDC1A376E42004305AA /* HRBrightnessSlider.h */,
+				1392BDDD1A376E42004305AA /* HRBrightnessSlider.m */,
+				1392BDDE1A376E42004305AA /* HRColorCursor.h */,
+				1392BDDF1A376E42004305AA /* HRColorCursor.m */,
+				1392BDE01A376E42004305AA /* HRColorInfoView.h */,
+				1392BDE11A376E42004305AA /* HRColorInfoView.m */,
+				1392BDE21A376E42004305AA /* HRColorMapView.h */,
+				1392BDE31A376E42004305AA /* HRColorMapView.m */,
+				1392BDE41A376E42004305AA /* HRColorPickerView.h */,
+				1392BDE51A376E42004305AA /* HRColorPickerView.m */,
+				1392BDE61A376E42004305AA /* HRHSVColorUtil.h */,
+				1392BDE71A376E42004305AA /* HRHSVColorUtil.m */,
+				1392BDE81A376E42004305AA /* UIImage+CoreGraphics.h */,
+				1392BDE91A376E42004305AA /* UIImage+CoreGraphics.m */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		1392BDF81A377D6D004305AA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1392BDFC1A377DE2004305AA /* NetworkManager.h */,
+				1392BDFD1A377DE2004305AA /* NetworkManager.m */,
+				1392BDF51A377D5C004305AA /* GCDAsyncUdpSocket.h */,
+				1392BDF61A377D5C004305AA /* GCDAsyncUdpSocket.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		1392BDF91A377D73004305AA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1392BDCF1A376167004305AA /* ViewController.h */,
+				1392BDD01A376167004305AA /* ViewController.m */,
+				1392BDD91A376E42004305AA /* ColorPicker */,
+				1392BDD81A37625C004305AA /* MSGridView */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1392BDFA1A377D7F004305AA /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				13536F8C1A37565800815506 /* Main.storyboard */,
+				13536F8F1A37565800815506 /* Images.xcassets */,
+				13536F911A37565800815506 /* LaunchScreen.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		1392BDFB1A377D88004305AA /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				13536F861A37565800815506 /* Glass.xcdatamodeld */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13536F7B1A37565800815506 /* Glass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13536FA21A37565800815506 /* Build configuration list for PBXNativeTarget "Glass" */;
+			buildPhases = (
+				13536F781A37565800815506 /* Sources */,
+				13536F791A37565800815506 /* Frameworks */,
+				13536F7A1A37565800815506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Glass;
+			productName = Glass;
+			productReference = 13536F7C1A37565800815506 /* Glass.app */;
+			productType = "com.apple.product-type.application";
+		};
+		13536F971A37565800815506 /* GlassTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13536FA51A37565800815506 /* Build configuration list for PBXNativeTarget "GlassTests" */;
+			buildPhases = (
+				13536F941A37565800815506 /* Sources */,
+				13536F951A37565800815506 /* Frameworks */,
+				13536F961A37565800815506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13536F9A1A37565800815506 /* PBXTargetDependency */,
+			);
+			name = GlassTests;
+			productName = GlassTests;
+			productReference = 13536F981A37565800815506 /* GlassTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13536F741A37565800815506 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Catalyze Chicago";
+				TargetAttributes = {
+					13536F7B1A37565800815506 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					13536F971A37565800815506 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 13536F7B1A37565800815506;
+					};
+				};
+			};
+			buildConfigurationList = 13536F771A37565800815506 /* Build configuration list for PBXProject "Glass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13536F731A37565800815506;
+			productRefGroup = 13536F7D1A37565800815506 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13536F7B1A37565800815506 /* Glass */,
+				13536F971A37565800815506 /* GlassTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13536F7A1A37565800815506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13536F8E1A37565800815506 /* Main.storyboard in Resources */,
+				13536F931A37565800815506 /* LaunchScreen.xib in Resources */,
+				13536F901A37565800815506 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13536F961A37565800815506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13536F781A37565800815506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1392BDD61A3761C0004305AA /* MSGridView.m in Sources */,
+				1392BDD71A3761C0004305AA /* MSGridViewCell.m in Sources */,
+				1392BDF41A37704C004305AA /* HRSampleColorPickerViewController.m in Sources */,
+				1392BDED1A376E42004305AA /* HRColorInfoView.m in Sources */,
+				13536F851A37565800815506 /* AppDelegate.m in Sources */,
+				1392BDEF1A376E42004305AA /* HRColorPickerView.m in Sources */,
+				13536F821A37565800815506 /* main.m in Sources */,
+				13536F881A37565800815506 /* Glass.xcdatamodeld in Sources */,
+				1392BDEE1A376E42004305AA /* HRColorMapView.m in Sources */,
+				1392BDEC1A376E42004305AA /* HRColorCursor.m in Sources */,
+				1392BDF11A376E42004305AA /* UIImage+CoreGraphics.m in Sources */,
+				1392BDEB1A376E42004305AA /* HRBrightnessSlider.m in Sources */,
+				1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */,
+				1392BDF71A377D5C004305AA /* GCDAsyncUdpSocket.m in Sources */,
+				1392BDF01A376E42004305AA /* HRHSVColorUtil.m in Sources */,
+				1392BDD11A376167004305AA /* ViewController.m in Sources */,
+				1392BDEA1A376E42004305AA /* HRBrightnessCursor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13536F941A37565800815506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13536F9F1A37565800815506 /* GlassTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13536F9A1A37565800815506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13536F7B1A37565800815506 /* Glass */;
+			targetProxy = 13536F991A37565800815506 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13536F8C1A37565800815506 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13536F8D1A37565800815506 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		13536F911A37565800815506 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13536F921A37565800815506 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13536FA01A37565800815506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13536FA11A37565800815506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13536FA31A37565800815506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Glass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		13536FA41A37565800815506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Glass/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		13536FA61A37565800815506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GlassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glass.app/Glass";
+			};
+			name = Debug;
+		};
+		13536FA71A37565800815506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GlassTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glass.app/Glass";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13536F771A37565800815506 /* Build configuration list for PBXProject "Glass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13536FA01A37565800815506 /* Debug */,
+				13536FA11A37565800815506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13536FA21A37565800815506 /* Build configuration list for PBXNativeTarget "Glass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13536FA31A37565800815506 /* Debug */,
+				13536FA41A37565800815506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13536FA51A37565800815506 /* Build configuration list for PBXNativeTarget "GlassTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13536FA61A37565800815506 /* Debug */,
+				13536FA71A37565800815506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		13536F861A37565800815506 /* Glass.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				13536F871A37565800815506 /* Glass.xcdatamodel */,
+			);
+			currentVersion = 13536F871A37565800815506 /* Glass.xcdatamodel */;
+			path = Glass.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 13536F741A37565800815506 /* Project object */;
+}

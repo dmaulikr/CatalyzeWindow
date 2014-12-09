@@ -32,6 +32,8 @@ color blockMatrix[][] = {{b, b, b, b, b, b},
                         {b, b, b, b, b, b},
                         {b, b, b, b, b, b}};
                         
+StringDict clientDictionary = new StringDict();
+                        
 boolean automarch = false;
 int automarchTimer = 1000;
 int lastMarch = 0;
@@ -100,13 +102,26 @@ void receive( byte[] data, String ip, int port ) {
       if (debug) println("automarch on");
       automarch = true;
     }
-  }else if(message.indexOf("m!") != -1){
+  }else if(message.equals("m!")){
     /*
       March - Shift all pixels to the left by one and wrap disposed pixels to the far right side
     */
     if (debug) println("march matrix");
     marchMatrix();
+  }else if(message.equals("a!")){
+    /*
+      Add new client
+      Adds client to client dictionary for transmitting data to 
+    */
+    clientDictionary.set(ip, (""+millis()));
+  }else if(message.equals("r!")){
+   /*
+      Remove Client
+      Removes client from clientDictionary so they're not sent matrix info any longer
+   */
+    clientDictionary.remove(ip); 
   }
+    
 }
 
 void parseMatrix(){
@@ -146,4 +161,21 @@ void marchMatrix(){
       }
     }
   } 
+  sendMatrix();
+}
+
+void sendMatrix(){
+  String matrixString = new String();
+  for(int x=0; x<32; x++){
+    for(int y=0; y<6; y++){
+      color pixelColor = blockMatrix[x][y];
+      int red = (pixelColor >> 16) & 0xFF;
+      int green = (pixelColor >> 8) & 0xFF;
+      int blue = pixelColor & 0xFF;
+      matrixString += x + "," + y + "," + red + "," + green + "," + blue + "\n";
+    }
+  } 
+  for(String ip : clientDictionary.keys()){
+    server.send(matrixString, ip, 6667);
+  }
 }
