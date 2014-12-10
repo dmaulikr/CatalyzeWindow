@@ -40,12 +40,12 @@ int lastMarch = 0;
 
 void setupServer(){
   server = new UDP(this, 6699);
-  server.log(true);
+  server.log(false);
   server.listen(true);
 }
 
 void receive( byte[] data, String ip, int port ) {
-  boolean debug = true;
+  boolean debug = false;
   
   String message = new String( data );
   if (debug) println( "Raw: \"" + message + "\" from " + ip + " on port " + port );
