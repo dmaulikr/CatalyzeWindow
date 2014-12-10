@@ -13,11 +13,11 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet MSGridView *gridView;
-@property (nonatomic, strong) IBOutlet UISwitch *marchSwitch;
 
 @property (nonatomic, strong) UIColor *selectedColor;
 
 -(IBAction)resetAll:(id)sender;
--(IBAction)marchSwitched:(id)sender;
+-(IBAction)toggleMarch:(id)sender;
+
 @end
 

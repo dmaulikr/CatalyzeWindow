@@ -51,7 +51,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.colorPickerView.color = [UIColor purpleColor];
+    self.colorPickerView.color = [UIColor colorWithRed:0.0 green:0.0 blue:255.0 alpha:1.0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

@@ -39,7 +39,7 @@ int automarchTimer = 1000;
 int lastMarch = 0;
 
 void setupServer(){
-  server = new UDP(this, 6666);
+  server = new UDP(this, 6699);
   server.log(true);
   server.listen(true);
 }
@@ -121,6 +121,7 @@ void receive( byte[] data, String ip, int port ) {
    */
     clientDictionary.remove(ip); 
   }
+  sendMatrix();
     
 }
 

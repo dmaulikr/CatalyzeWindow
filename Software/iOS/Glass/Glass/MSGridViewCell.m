@@ -53,6 +53,7 @@
             if([[(MSGridView *)self.superview gridViewDelegate]respondsToSelector:@selector(didSelectCellWithIndexPath:)]) {
                 
                 [[(MSGridView *)self.superview gridViewDelegate] didSelectCellWithIndexPath:ip];
+                NSLog(@"%@", ip);
                 
             }
         }

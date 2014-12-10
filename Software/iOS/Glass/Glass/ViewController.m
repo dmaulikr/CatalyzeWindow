@@ -44,9 +44,9 @@
         cell = [[MSGridViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier];
     }
     
-    cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor darkGrayColor];
     
-    cell.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.layer.borderColor = [UIColor blackColor].CGColor;
     cell.layer.borderWidth = 1;
     return cell;
     
@@ -108,7 +108,7 @@
     [[NetworkManager sharedInstance] sendMessage:@"r!"];
 }
 
--(IBAction)marchSwitched:(id)sender{
+-(IBAction)toggleMarch:(id)sender{
     [[NetworkManager sharedInstance] sendMessage:@"am!1000"];
 }
 
