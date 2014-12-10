@@ -27,7 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eKs-cZ-IxV" kind="show" id="3Wy-lL-bfh"/>
+                                    <segue destination="eKs-cZ-IxV" kind="show" identifier="colorPickerSegue" id="3Wy-lL-bfh"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFM-Da-ZPy" customClass="MSGridView">
@@ -47,6 +47,15 @@
                                     <action selector="resetAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4z-WS-n8P"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E1-9W-T7d">
+                                <rect key="frame" x="285" y="562" width="30" height="30"/>
+                                <state key="normal" title="Flip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipMatrix:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5o9-Ir-OIW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
@@ -57,6 +66,8 @@
                             <constraint firstItem="On6-Ug-OW4" firstAttribute="top" secondItem="KFM-Da-ZPy" secondAttribute="bottom" constant="8" symbolic="YES" id="Sy1-NE-ULK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mms-9h-iTn" secondAttribute="bottom" constant="8" id="h6M-Cs-wb8"/>
                             <constraint firstItem="Mms-9h-iTn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="hm3-am-oLe"/>
+                            <constraint firstItem="3E1-9W-T7d" firstAttribute="centerX" secondItem="KFM-Da-ZPy" secondAttribute="centerX" id="klw-NR-hRA"/>
+                            <constraint firstItem="3E1-9W-T7d" firstAttribute="baseline" secondItem="On6-Ug-OW4" secondAttribute="baseline" id="wgb-nx-RL7"/>
                             <constraint firstItem="On6-Ug-OW4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zKe-C9-BnY"/>
                         </constraints>
                         <variation key="heightClass=compact">
@@ -75,7 +86,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="vso-s7-JRI">
                             <connections>
-                                <action selector="toggleMarch:" destination="BYZ-38-t0r" id="gvc-fa-CEG"/>
+                                <segue destination="JGf-YP-uD2" kind="show" id="Q1g-nI-PYw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -324,6 +335,69 @@
             </objects>
             <point key="canvasLocation" x="2201" y="378"/>
         </scene>
+        <!--March Settings View Controller-->
+        <scene sceneID="tNC-jd-PNf">
+            <objects>
+                <viewController id="JGf-YP-uD2" customClass="MarchSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cbJ-PJ-bL0"/>
+                        <viewControllerLayoutGuide type="bottom" id="tB2-9B-Cui"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8go-xA-9bn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-af-fj2">
+                                <rect key="frame" x="77" y="72" width="452" height="31"/>
+                                <connections>
+                                    <action selector="speedSliderChanged:" destination="JGf-YP-uD2" eventType="valueChanged" id="ZKa-7b-Dmz"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8w-tr-KXd">
+                                <rect key="frame" x="16" y="76" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bp-Hb-g4R">
+                                <rect key="frame" x="16" y="110" width="561" height="30"/>
+                                <state key="normal" title="Toggle March">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleMarch:" destination="JGf-YP-uD2" eventType="touchUpInside" id="z8H-wc-pNB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qg-Kl-5yG">
+                                <rect key="frame" x="535" y="76" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="IOj-af-fj2" firstAttribute="leading" secondItem="k8w-tr-KXd" secondAttribute="trailing" constant="8" symbolic="YES" id="1yE-FI-Bay"/>
+                            <constraint firstItem="3Qg-Kl-5yG" firstAttribute="trailing" secondItem="2bp-Hb-g4R" secondAttribute="trailing" id="2We-QC-Ay4"/>
+                            <constraint firstItem="IOj-af-fj2" firstAttribute="top" secondItem="cbJ-PJ-bL0" secondAttribute="bottom" constant="8" symbolic="YES" id="2qA-IQ-fhV"/>
+                            <constraint firstItem="k8w-tr-KXd" firstAttribute="leading" secondItem="8go-xA-9bn" secondAttribute="leadingMargin" id="Apk-UL-Bdo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Qg-Kl-5yG" secondAttribute="trailing" constant="7" id="PRP-io-c9D"/>
+                            <constraint firstItem="2bp-Hb-g4R" firstAttribute="top" secondItem="IOj-af-fj2" secondAttribute="bottom" constant="8" symbolic="YES" id="Rq7-Ab-HTg"/>
+                            <constraint firstItem="k8w-tr-KXd" firstAttribute="baseline" secondItem="3Qg-Kl-5yG" secondAttribute="baseline" id="ZAW-bZ-scb"/>
+                            <constraint firstItem="3Qg-Kl-5yG" firstAttribute="leading" secondItem="IOj-af-fj2" secondAttribute="trailing" constant="8" symbolic="YES" id="cGo-Da-c8P"/>
+                            <constraint firstItem="2bp-Hb-g4R" firstAttribute="leading" secondItem="k8w-tr-KXd" secondAttribute="leading" id="dpB-cN-qRt"/>
+                            <constraint firstItem="k8w-tr-KXd" firstAttribute="top" secondItem="cbJ-PJ-bL0" secondAttribute="bottom" constant="12" id="huw-b4-Fxn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="speedLabel" destination="3Qg-Kl-5yG" id="3pp-Gm-7ss"/>
+                        <outlet property="speedSlider" destination="IOj-af-fj2" id="IWv-NK-3pa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYC-Ym-WhG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="1289"/>
+        </scene>
         <!--Saved Sketches-->
         <scene sceneID="sMj-EH-lEl">
             <objects>
@@ -380,10 +454,18 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qFj-I5-v35">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="3ZC-RI-bP3" style="IBUITableViewCellStyleDefault" id="qFj-I5-v35">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qFj-I5-v35" id="jZp-bv-vzz">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ZC-RI-bP3">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>

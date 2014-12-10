@@ -36,6 +36,7 @@
 
 @property (weak) IBOutlet id <HRColorPickerViewControllerDelegate> delegate;
 
+@property (nonatomic, strong) UIColor *startingColor;
 
 @end
 

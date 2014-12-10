@@ -10,6 +10,7 @@
 #import "MSGridView.h"
 #import "HRSampleColorPickerViewController.h"
 #import "NetworkManager.h"
+#import "Sketch.h"
 
 @interface ViewController () <MSGridViewDelegate, MSGridViewDataSource, HRColorPickerViewControllerDelegate>
 
@@ -24,6 +25,26 @@
     self.gridView.gridViewDataSource = self;
     self.selectedColor = [UIColor whiteColor];
     [[self gridView] setInnerSpacing:CGSizeMake(0,0)];
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"LoadSketchNotification" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if(note.object){
+            [[NetworkManager sharedInstance] askForAutomarchSettingsWithCompletionHandler:^(bool automarchState, NSNumber *automarchSpeed) {
+                if (automarchState) {
+                    [[NetworkManager sharedInstance] sendMessage:@"m!"];
+                }
+                Sketch *sketchToLoad = (Sketch*)note.object;
+                NSLog(@"Loading Sketch: %@", sketchToLoad.name);
+                [[NetworkManager sharedInstance] sendMessage:@"r!"];
+                NSArray *sketchData = [sketchToLoad.sketchData componentsSeparatedByString:@"\n"];
+                for(NSString *line in sketchData){
+                    NSArray *lineArray = [line componentsSeparatedByString:@","];
+                    if([lineArray count] == 5){
+                        NSString *outgoingMessage = [NSString stringWithFormat:@"%@,%@,%@,%@,%@", lineArray[0], lineArray[1], lineArray[2], lineArray[3], lineArray[4]];
+                        [[NetworkManager sharedInstance] sendMessage:outgoingMessage];
+                    }
+                }
+            }];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,10 +65,10 @@
         cell = [[MSGridViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier];
     }
     
-    cell.backgroundColor = [UIColor darkGrayColor];
-    
-    cell.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.backgroundColor = [UIColor blackColor];
+    cell.layer.borderColor = [UIColor darkGrayColor].CGColor;
     cell.layer.borderWidth = 1;
+    
     return cell;
     
 }
@@ -68,10 +89,10 @@
 -(NSUInteger)numberOfRowsForGridAtIndexPath:(NSIndexPath*)indexPath{
     return 6;
 }
- 
- -(float)heightForCellRowAtIndex:(NSUInteger)row forGridAtIndexPath:(NSIndexPath *)gridIndexPath{
-     return 40.0f;
- }
+
+-(float)heightForCellRowAtIndex:(NSUInteger)row forGridAtIndexPath:(NSIndexPath *)gridIndexPath{
+    return 40.0f;
+}
 
 -(float)widthForCellColumnAtIndex:(NSUInteger)column forGridAtIndexPath:(NSIndexPath *)gridIndexPath{
     return 20.0f;
@@ -100,6 +121,8 @@
     [[NetworkManager sharedInstance] sendMessage:outgoingMessage];
 }
 
+#pragma mark - IBActions
+
 -(IBAction)resetAll:(id)sender{
     for(NSIndexPath *indexPath in [[self.gridView gridCells] allKeys]){
         MSGridViewCell *cell = [self.gridView cellAtIndexPath:indexPath];
@@ -108,10 +131,18 @@
     [[NetworkManager sharedInstance] sendMessage:@"r!"];
 }
 
--(IBAction)toggleMarch:(id)sender{
-    [[NetworkManager sharedInstance] sendMessage:@"am!1000"];
+-(void)flipMatrix:(id)sender{
+    [[NetworkManager sharedInstance] sendMessage:@"f!"];
 }
 
+#pragma mark - Segue Handling
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //Have the color picker start with the currently selected color instead of defaulting back to blue every time
+    if ([[segue identifier] isEqualToString:@"colorPickerSegue"]) {
+        HRSampleColorPickerViewController *colorPicker = (HRSampleColorPickerViewController*)[segue destinationViewController];
+        [colorPicker setStartingColor:self.selectedColor];
+    }
+}
 
 @end

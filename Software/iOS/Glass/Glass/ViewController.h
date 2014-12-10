@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UIColor *selectedColor;
 
 -(IBAction)resetAll:(id)sender;
--(IBAction)toggleMarch:(id)sender;
+-(IBAction)flipMatrix:(id)sender;
 
 @end
 

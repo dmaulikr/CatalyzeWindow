@@ -120,9 +120,31 @@ void receive( byte[] data, String ip, int port ) {
       Removes client from clientDictionary so they're not sent matrix info any longer
    */
     clientDictionary.remove(ip); 
+  }else if(message.equals("am?")){
+   /*
+    Automarch Query
+    Client is asking if we're currently marching, and what speed we're marching at.
+   */ 
+   String response = new String();
+   if(automarch){
+     response += "y,";
+   }else{
+     response += "n,";
+   }
+   response += automarchTimer;
+   server.send(response, ip, 6667);
+  }else if(message.equals("f!")){
+    if (debug) println("Flip matrix");
+    color[][] tempArray = new color[32][6];
+    for(int x=0; x<32; x++){
+      tempArray[31-x] = blockMatrix[x];
+    }
+    blockMatrix = tempArray;
+    parseMatrix();
   }
-  sendMatrix();
-    
+  
+  
+  sendMatrix();  
 }
 
 void parseMatrix(){

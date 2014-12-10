@@ -28,6 +28,10 @@ void setup() {
   
   //Set the background to black
   background(0);
+  noLoop();
+  
+  color[] tempArray = new color[6];
+  
 }
 
 void draw() {

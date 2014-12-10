@@ -15,6 +15,16 @@
 +(NetworkManager *)sharedInstance;
 
 @property (nonatomic, weak) MSGridView *gridView;
+
 -(void)sendMessage:(NSString *)message;
+-(void)askForAutomarchSettings;
+-(void)askForAutomarchSettingsWithCompletionHandler:(void(^)(bool automarchState, NSNumber *automarchSpeed))completionHandler;
+
+-(void)subscribeToMatrixUpdates;
+-(void)unsubscribeFromMatrixUpdates;
+
+@property (nonatomic, strong) NSNumber *automarchState;
+@property (nonatomic, strong) NSNumber *automarchSpeed;
+@property (nonatomic, strong) NSString *mostRecentMatrix;
 
 @end

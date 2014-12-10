@@ -41,21 +41,14 @@
 
 @synthesize delegate;
 
-- (id)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.colorPickerView.color = [UIColor colorWithRed:0.0 green:0.0 blue:255.0 alpha:1.0];
+-(void)viewDidLoad{
+    if(!self.startingColor) self.startingColor = [UIColor blueColor];
+    self.colorPickerView.color = self.startingColor;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+#warning - stupid and hacky, fix. Use the delegate properly.
     ViewController *viewController = (ViewController *)self.navigationController.viewControllers[0];
     [viewController setSelectedColor:self.colorPickerView.color];
 }
