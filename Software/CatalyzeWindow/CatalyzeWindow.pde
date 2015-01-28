@@ -15,7 +15,7 @@ void setup() {
   noStroke();
   
   //FadeCandy Setup
-  opc = new OPC(this, "192.168.1.37", 7890);
+  opc = new OPC(this, "192.168.3.5", 7890);
   setupMapping();
   
   //Setup UDP Server

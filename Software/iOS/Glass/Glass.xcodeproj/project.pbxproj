@@ -505,7 +505,7 @@
 				INFOPLIST_FILE = Glass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "db2271fc-bd49-45fc-8b73-0ab6b01435f0";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -518,7 +518,7 @@
 				INFOPLIST_FILE = Glass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "db2271fc-bd49-45fc-8b73-0ab6b01435f0";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

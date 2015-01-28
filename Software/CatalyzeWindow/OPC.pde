@@ -17,6 +17,7 @@ public class OPC
   int port;
 
   int[] pixelLocations;
+  int[] previousPixelLocations;
   byte[] packetData;
   byte firmwareConfig;
   String colorCorrection;
@@ -40,8 +41,15 @@ public class OPC
     } else if (index >= pixelLocations.length) {
       pixelLocations = Arrays.copyOf(pixelLocations, index + 1);
     }
+    
+    if (previousPixelLocations == null) {
+      previousPixelLocations = new int[index + 1];
+    } else if (index >= previousPixelLocations.length) {
+      previousPixelLocations = Arrays.copyOf(previousPixelLocations, index + 1);
+    }
 
     pixelLocations[index] = x + width * y;
+    previousPixelLocations[index] = x + width * y;
   }
   
   // Set the location of several LEDs arranged in a strip.
@@ -243,6 +251,8 @@ public class OPC
     setPixelCount(numPixels);
     loadPixels();
 
+    boolean pixelsHaveChanged = false;
+
     for (int i = 0; i < numPixels; i++) {
       int pixelLocation = pixelLocations[i];
       int pixel = pixels[pixelLocation];
@@ -251,16 +261,22 @@ public class OPC
       packetData[ledAddress + 1] = (byte)(pixel >> 8);
       packetData[ledAddress + 2] = (byte)pixel;
       ledAddress += 3;
+      
+      if(previousPixelLocations[i] != pixel){
+        pixelsHaveChanged = true;
+        previousPixelLocations[i] = pixel;
+      }
 
       if (enableShowLocations) {
         pixels[pixelLocation] = 0xFFFFFF ^ pixel;
       }
     }
+    if(pixelsHaveChanged == true || previousPixelLocations == null){
+      writePixels();
 
-    writePixels();
-
-    if (enableShowLocations) {
-      updatePixels();
+      if (enableShowLocations) {
+        updatePixels();
+      }
     }
   }
   
