@@ -18,10 +18,14 @@ public class OPC
 
   int[] pixelLocations;
   int[] previousPixelLocations;
+  long lastUpdate = millis();
+  long intermittentlyUpdatedAt = millis();
+  
   byte[] packetData;
   byte firmwareConfig;
   String colorCorrection;
   boolean enableShowLocations;
+  
 
   OPC(PApplet parent, String host, int port)
   {
@@ -251,8 +255,6 @@ public class OPC
     setPixelCount(numPixels);
     loadPixels();
 
-    boolean pixelsHaveChanged = false;
-
     for (int i = 0; i < numPixels; i++) {
       int pixelLocation = pixelLocations[i];
       int pixel = pixels[pixelLocation];
@@ -263,19 +265,23 @@ public class OPC
       ledAddress += 3;
       
       if(previousPixelLocations[i] != pixel){
-        pixelsHaveChanged = true;
         previousPixelLocations[i] = pixel;
+        lastUpdate = millis();
       }
 
       if (enableShowLocations) {
         pixels[pixelLocation] = 0xFFFFFF ^ pixel;
       }
     }
-    if(pixelsHaveChanged == true || previousPixelLocations == null){
+    if(millis() - lastUpdate < 5000 || millis() - intermittentlyUpdatedAt > 60000 || previousPixelLocations == null){
       writePixels();
 
       if (enableShowLocations) {
         updatePixels();
+      }
+      
+      if(millis() - intermittentlyUpdatedAt > 65000){
+        intermittentlyUpdatedAt = millis();
       }
     }
   }
