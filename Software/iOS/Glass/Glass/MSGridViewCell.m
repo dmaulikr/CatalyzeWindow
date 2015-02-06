@@ -11,6 +11,7 @@
 @interface MSGridViewCell()
 {
     BOOL touching;
+    BOOL previouslyActive;
 }
 @end
 
@@ -23,6 +24,8 @@
         // Initialization code
         self.reuseIdentifier = identifier;
         self.contentView = [UIView new];
+        previouslyActive = NO;
+        self.active = NO;
         [self addSubview:self.contentView];
     }
     return self;
@@ -46,14 +49,13 @@
         UITouch *t = [touches anyObject];
         CGPoint p = [t locationInView:self];
         if(CGRectContainsPoint(CGRectMake(0, 0, self.frame.size.width, self.frame.size.height), p)) {
-            
-            
+        
             NSIndexPath *ip = [(MSGridView *)self.superview indexPathForCell:self];
             
             if([[(MSGridView *)self.superview gridViewDelegate]respondsToSelector:@selector(didSelectCellWithIndexPath:)]) {
                 
                 [[(MSGridView *)self.superview gridViewDelegate] didSelectCellWithIndexPath:ip];
-                NSLog(@"%@", ip);
+                //NSLog(@"%@", ip);
                 
             }
         }

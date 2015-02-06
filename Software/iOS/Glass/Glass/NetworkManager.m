@@ -106,7 +106,7 @@ static NetworkManager *sharedInstance = nil;
                     }
                     NSUInteger gridIntegerArray[] = {0, supergridColumn, [(NSString *)msgComponents[1] integerValue], [(NSString *)msgComponents[0] integerValue]};
                     if (supergridColumn == 1) {
-                        NSLog(@"%@", msgComponents);
+                        //NSLog(@"%@", msgComponents);
                         gridIntegerArray[3] = gridIntegerArray[3]-16;
                     }
                     NSIndexPath *gridIndexPath = [NSIndexPath indexPathWithIndexes:gridIntegerArray length:4];
@@ -115,6 +115,11 @@ static NetworkManager *sharedInstance = nil;
                                                      green:[(NSString *)msgComponents[3] doubleValue]/255.0f
                                                       blue:[(NSString *)msgComponents[4] doubleValue]/255.0f
                                                      alpha:1.0];
+                    if ([(NSString *)msgComponents[2] isEqualToString:@"0"] && [(NSString *)msgComponents[3] isEqualToString:@"0"] && [(NSString *)msgComponents[4] isEqualToString:@"0"]) {
+                        cell.active = NO;
+                    }else{
+                        cell.active = YES;
+                    }
                     cell.backgroundColor = color;
                 }
             }

@@ -15,6 +15,8 @@
 
 @property (nonatomic,strong) UIView *contentView;
 
+@property (nonatomic, getter=isActive) BOOL active;
+
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)identifier;
 
 @end

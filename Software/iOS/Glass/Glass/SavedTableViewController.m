@@ -35,7 +35,7 @@
 #pragma mark - Table View Selection
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Selected Row : %lu", (long)indexPath.row);
+    //NSLog(@"Selected Row : %lu", (long)indexPath.row);
     Sketch *sketch = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LoadSketchNotification" object:sketch];
 }

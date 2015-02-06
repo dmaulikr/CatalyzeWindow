@@ -68,6 +68,7 @@
     cell.backgroundColor = [UIColor blackColor];
     cell.layer.borderColor = [UIColor darkGrayColor].CGColor;
     cell.layer.borderWidth = 1;
+    cell.active = NO;
     
     return cell;
     
@@ -109,16 +110,21 @@
     }else{
         column = (int)[indexPath indexAtPosition:3];
     }
-    NSLog(@"%@", indexPath);
-    NSLog(@"Row: %i \tColumn: %i", row, column);
+    //NSLog(@"%@", indexPath);
+    //NSLog(@"Row: %i \tColumn: %i", row, column);
     MSGridViewCell *cell = [self.gridView cellAtIndexPath:indexPath];
-    cell.backgroundColor = self.selectedColor;
-    const CGFloat* colors = CGColorGetComponents( self.selectedColor.CGColor );
-    CGFloat red = colors[0] * 255;
-    CGFloat green = colors[1] * 255;
-    CGFloat blue = colors[2] * 255;
-    NSString *outgoingMessage = [NSString stringWithFormat:@"%i,%i,%i,%i,%i", (int)column, (int)row, (int)red, (int)green, (int)blue];
-    [[NetworkManager sharedInstance] sendMessage:outgoingMessage];
+    
+    if(![cell isActive]){
+        const CGFloat* colors = CGColorGetComponents( self.selectedColor.CGColor );
+        CGFloat red = colors[0] * 255;
+        CGFloat green = colors[1] * 255;
+        CGFloat blue = colors[2] * 255;
+        NSString *outgoingMessage = [NSString stringWithFormat:@"%i,%i,%i,%i,%i", (int)column, (int)row, (int)red, (int)green, (int)blue];
+        [[NetworkManager sharedInstance] sendMessage:outgoingMessage];
+    }else{
+        NSString *outgoingMessage = [NSString stringWithFormat:@"%i,%i,0,0,0", (int)column, (int)row];
+        [[NetworkManager sharedInstance] sendMessage:outgoingMessage];
+    }
 }
 
 #pragma mark - IBActions
