@@ -74,6 +74,7 @@ This removes a client from pixel data updates
 
 ##Query Automarch
 Send:
+
 `am?`
 
 This asks the server for the current automarch settings. The server will respond with `y,x` or `n,x` where y = YES and n = NO, and x = current automarch timer in milliseconds.
