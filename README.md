@@ -7,6 +7,7 @@ Our team has always had an interest in creating display systems : [Multi-touch E
 
 
 ![Catalyze Window At Night](http://joshbillions.org/catalyze/images/led_wall/IMG_7276.JPG "Catalyze Window At Night")
+![Movie](http://joshbillions.org/catalyze/images/led_wall/IMG_6986.MOV)
 
 
 The first step along our way was to make sure that the FadeCandies and connections to LED strips and power would be as secure as possible. To do this, we designed up a quick breakout board, and had them produced here in Chicago by our good friends over at [Twisted Traces](https://www.twistedtraces.com). 
