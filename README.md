@@ -30,7 +30,7 @@ With LED strips cut down, we started work mounting them with small sections of V
 With all of the LED strips in place and connected to our FadeCandy breakout boards we wired each back to a USB Hub that was under the keen supervision of our [O-DROID C1](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433) running [FadeCandy Server](https://github.com/scanlime/fadecandy/tree/master/server). We then mapped out each of the strips in Processing (available in this repo), and coded up a quick API.
 
 #API Details
-Our server window server is running on Ashpool.local (You must be connected to our wireless network to talk to it) on port 6699 (UDP).
+We'd love to see more code written for these windows! The only requirement at this point is that you be connected to our local network. Our window server is running on Ashpool.local and accepts UDP messages on port 6699. Here are the messages it knows about:
 
 ##Change the color of a pixel
 Send:
