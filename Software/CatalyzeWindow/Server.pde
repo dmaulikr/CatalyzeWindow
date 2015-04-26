@@ -45,7 +45,7 @@ void setupServer(){
 }
 
 void receive( byte[] data, String ip, int port ) {
-  boolean debug = false;
+  boolean debug = true;
   
   String message = new String( data );
   if (debug) println( "Raw: \"" + message + "\" from " + ip + " on port " + port );
@@ -126,6 +126,7 @@ void receive( byte[] data, String ip, int port ) {
     Client is asking if we're currently marching, and what speed we're marching at.
    */ 
    String response = new String();
+   response += "am,";
    if(automarch){
      response += "y,";
    }else{
@@ -136,7 +137,7 @@ void receive( byte[] data, String ip, int port ) {
   }else if(message.equals("f!")){
     if (debug) println("Flip matrix");
     color[][] tempArray = new color[32][6];
-    for(int x=0; x<32; x++){
+    for(int x=0; x < 32; x++){
       tempArray[31-x] = blockMatrix[x];
     }
     blockMatrix = tempArray;

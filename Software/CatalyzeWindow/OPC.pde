@@ -19,7 +19,6 @@ public class OPC
   int[] pixelLocations;
   int[] previousPixelLocations;
   long lastUpdate = millis();
-  long intermittentlyUpdatedAt = millis();
   
   byte[] packetData;
   byte firmwareConfig;
@@ -273,15 +272,11 @@ public class OPC
         pixels[pixelLocation] = 0xFFFFFF ^ pixel;
       }
     }
-    if(millis() - lastUpdate < 5000 || millis() - intermittentlyUpdatedAt > 60000 || previousPixelLocations == null){
+    if(millis() - lastUpdate < 5000 || previousPixelLocations == null){
       writePixels();
 
       if (enableShowLocations) {
         updatePixels();
-      }
-      
-      if(millis() - intermittentlyUpdatedAt > 65000){
-        intermittentlyUpdatedAt = millis();
       }
     }
   }

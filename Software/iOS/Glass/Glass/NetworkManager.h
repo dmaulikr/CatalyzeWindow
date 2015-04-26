@@ -23,6 +23,8 @@
 -(void)subscribeToMatrixUpdates;
 -(void)unsubscribeFromMatrixUpdates;
 
+-(void)resetAllLEDs;
+
 @property (nonatomic, strong) NSNumber *automarchState;
 @property (nonatomic, strong) NSNumber *automarchSpeed;
 @property (nonatomic, strong) NSString *mostRecentMatrix;

@@ -11,7 +11,7 @@ UDP server;
 void setup() {
   //Drawing Setup
   size(2000, 380, P2D);
-  frameRate(10);
+  //frameRate(10);
   noStroke();
   
   //FadeCandy Setup
@@ -32,7 +32,8 @@ void setup() {
 
 void draw() {
   background(0);
-  parseMatrix();
+  spectrum();
+  //parseMatrix();
   //drawMouse();
   //drawVideo();
   //drawBouncyBubbles();

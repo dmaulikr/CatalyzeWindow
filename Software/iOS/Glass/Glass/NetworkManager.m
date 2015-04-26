@@ -74,6 +74,10 @@ static NetworkManager *sharedInstance = nil;
     [self sendMessage:@"x!"];
 }
 
+-(void)resetAllLEDs{
+    [self sendMessage:@"r!"];
+}
+
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext
 {
     NSString *raw = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];

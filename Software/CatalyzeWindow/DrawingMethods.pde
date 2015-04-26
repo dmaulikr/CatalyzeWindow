@@ -73,7 +73,7 @@ a whole bunch of bouncy balls!
 
 int numBalls = 12;
 float spring = 0.05;
-float gravity = 0.03;
+float gravity = 0.01;
 float friction = -0.9;
 Ball[] balls = new Ball[numBalls];
 

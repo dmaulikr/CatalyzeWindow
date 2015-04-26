@@ -9,7 +9,23 @@
 #import "MarchSettingsViewController.h"
 #import "NetworkManager.h"
 
-@interface MarchSettingsViewController ()
+@interface MarchSettingsViewController (){
+    NSUInteger _xCounter;
+    NSUInteger _yCounter;
+    NSUInteger _rCounter;
+    NSUInteger _gCounter;
+    NSUInteger _bCounter;
+    
+    NSUInteger _spectrumXCounter;
+    NSUInteger _spectrumYCounter;
+    NSUInteger _spectrumRCounter;
+    NSUInteger _spectrumGCounter;
+    NSUInteger _spectrumBCounter;
+}
+
+@property (nonatomic, strong) NSTimer *playgroundTimer;
+
+-(void)incrementPlayground;
 
 @end
 
@@ -42,14 +58,63 @@
     self.speedLabel.text = [NSString stringWithFormat:@"%@s", [nf stringFromNumber:[NSNumber numberWithFloat:self.speedSlider.value]]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)playgroundTapped:(id)sender{
+    if (self.playgroundTimer) {
+        [self.playgroundTimer invalidate];
+        self.playgroundTimer = nil;
+    }else{
+        self.playgroundTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(randomScan) userInfo:nil repeats:YES];
+    }
 }
-*/
+
+-(void)incrementPlayground{
+    NSString *message = [NSString stringWithFormat:@"%lu,%lu,%i,%i,%i", (unsigned long)_xCounter, _yCounter, arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255)];
+    [[NetworkManager sharedInstance] sendMessage:message];
+    
+    NSLog(@"Sent message: %@", message);
+    
+    if (_xCounter >= 32) {
+        _xCounter = 0;
+        _yCounter++;
+    }else{
+        _xCounter++;
+    }
+    
+    if (_yCounter >= 6) {
+        _yCounter = 0;
+    }
+}
+
+-(void)randomScan{
+    NSString *message = [NSString stringWithFormat:@"%lu,%lu,%i,%i,%i", (unsigned long)_xCounter, _yCounter, arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255)];
+//    [[NetworkManager sharedInstance] sendMessage:message];
+    
+    NSLog(@"Sent message: %@", message);
+    
+    if (_xCounter >= 32) {
+        _xCounter = 0;
+        _yCounter++;
+    }else{
+        _xCounter++;
+    }
+    
+    if (_yCounter >= 6) {
+        _yCounter = 0;
+    }
+}
+
+-(void)spectrumScan{
+
+}
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
