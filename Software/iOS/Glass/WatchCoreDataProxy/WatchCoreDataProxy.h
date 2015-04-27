@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "SketchManager.h"
 #import "DataManager.h"
+#import "Sketch.h"
 //! Project version number for WatchCoreDataProxy.
 FOUNDATION_EXPORT double WatchCoreDataProxyVersionNumber;
 

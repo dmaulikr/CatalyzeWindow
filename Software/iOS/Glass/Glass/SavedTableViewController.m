@@ -8,10 +8,6 @@
 
 #import "SavedTableViewController.h"
 #import "WatchCoreDataProxy.h"
-#import "SketchManager.h"
-#import "DataManager.h"
-#import "Sketch.h"
-
 
 @implementation SavedTableViewController
 

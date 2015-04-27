@@ -31,6 +31,7 @@
 		1392BDF71A377D5C004305AA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDF61A377D5C004305AA /* GCDAsyncUdpSocket.m */; };
 		1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDFD1A377DE2004305AA /* NetworkManager.m */; };
 		13C8D6DE1AEDE98900782F5F /* SketchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8D6DD1AEDE98900782F5F /* SketchManager.m */; };
+		13C8D6DF1AEDEA6B00782F5F /* Sketch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1344B25D1A37CB5D009FF88A /* Sketch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13F4A2AA1AED8CA2004662A7 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2A91AED8CA2004662A7 /* InterfaceController.m */; };
 		13F4A2AC1AED8CA2004662A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F4A2AB1AED8CA2004662A7 /* Images.xcassets */; };
 		13F4A2B01AED8CA2004662A7 /* Glass WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 13F4A2AF1AED8CA2004662A7 /* Glass WatchKit App.app */; };
@@ -47,9 +48,9 @@
 		13F4A2F01AED98C9004662A7 /* WatchCoreDataProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2EF1AED98C9004662A7 /* WatchCoreDataProxy.m */; };
 		13F4A2F21AED997E004662A7 /* Glass.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13536F861A37565800815506 /* Glass.xcdatamodeld */; };
 		13F4A2F41AED9988004662A7 /* Sketch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B25E1A37CB5D009FF88A /* Sketch.m */; };
-		13F4A2F71AED9BDB004662A7 /* DataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F4A2F51AED9BDB004662A7 /* DataManager.h */; };
+		13F4A2F71AED9BDB004662A7 /* DataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F4A2F51AED9BDB004662A7 /* DataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13F4A2F81AED9BDB004662A7 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2F61AED9BDB004662A7 /* DataManager.m */; };
-		13F4A2FB1AED9D72004662A7 /* SketchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F4A2F91AED9D72004662A7 /* SketchManager.h */; };
+		13F4A2FB1AED9D72004662A7 /* SketchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F4A2F91AED9D72004662A7 /* SketchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -472,6 +473,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C8D6DF1AEDEA6B00782F5F /* Sketch.h in Headers */,
 				13F4A2F71AED9BDB004662A7 /* DataManager.h in Headers */,
 				13F4A2D41AED973C004662A7 /* WatchCoreDataProxy.h in Headers */,
 				13F4A2FB1AED9D72004662A7 /* SketchManager.h in Headers */,
