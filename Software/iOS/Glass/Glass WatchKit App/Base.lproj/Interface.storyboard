@@ -5,24 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Catalyze-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller identifier="interfaceController" title="Catalyze" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <button width="1" alignment="left" title="Reset LEDs" id="Sh0-oA-oXH">
                             <connections>
                                 <action selector="resetAll" destination="AgC-eL-Hgc" id="VSa-F7-BxC"/>
                             </connections>
                         </button>
-                        <table alignment="left" id="yO2-GR-ibt">
+                        <table alignment="left" id="xYb-he-CLD">
                             <items>
-                                <tableRow id="Yuk-OG-vyN">
-                                    <group key="rootItem" width="1" alignment="left" id="Lxa-jt-agS"/>
+                                <tableRow identifier="default" id="Ck2-FY-yCG" customClass="TableRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="miI-Ki-q5y">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="efO-fj-BKU"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="efO-fj-BKU" id="iIb-mH-qG7"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="xYb-he-CLD" id="49b-Um-V65"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="136" y="305"/>

@@ -37,7 +37,7 @@ static WatchCoreDataProxy *sharedInstance = nil;
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Glass" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle bundleWithIdentifier:@"com.joshbillions.WatchCoreDataProxy"] URLForResource:@"Glass" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

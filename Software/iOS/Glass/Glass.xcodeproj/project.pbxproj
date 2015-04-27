@@ -32,6 +32,7 @@
 		1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDFD1A377DE2004305AA /* NetworkManager.m */; };
 		13C8D6DE1AEDE98900782F5F /* SketchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8D6DD1AEDE98900782F5F /* SketchManager.m */; };
 		13C8D6DF1AEDEA6B00782F5F /* Sketch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1344B25D1A37CB5D009FF88A /* Sketch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13C8D6E21AEDEB3200782F5F /* TableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8D6E11AEDEB3200782F5F /* TableRowController.m */; };
 		13F4A2AA1AED8CA2004662A7 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2A91AED8CA2004662A7 /* InterfaceController.m */; };
 		13F4A2AC1AED8CA2004662A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F4A2AB1AED8CA2004662A7 /* Images.xcassets */; };
 		13F4A2B01AED8CA2004662A7 /* Glass WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 13F4A2AF1AED8CA2004662A7 /* Glass WatchKit App.app */; };
@@ -173,6 +174,8 @@
 		1392BDFC1A377DE2004305AA /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		1392BDFD1A377DE2004305AA /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		13C8D6DD1AEDE98900782F5F /* SketchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchManager.m; sourceTree = "<group>"; };
+		13C8D6E01AEDEB3200782F5F /* TableRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowController.h; sourceTree = "<group>"; };
+		13C8D6E11AEDEB3200782F5F /* TableRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowController.m; sourceTree = "<group>"; };
 		13F4A2A41AED8CA2004662A7 /* Glass WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Glass WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F4A2A71AED8CA2004662A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F4A2A81AED8CA2004662A7 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				13F4A2C91AED9710004662A7 /* Glass WatchKit Extension.entitlements */,
 				13F4A2A81AED8CA2004662A7 /* InterfaceController.h */,
 				13F4A2A91AED8CA2004662A7 /* InterfaceController.m */,
+				13C8D6E01AEDEB3200782F5F /* TableRowController.h */,
+				13C8D6E11AEDEB3200782F5F /* TableRowController.m */,
 				13F4A2AB1AED8CA2004662A7 /* Images.xcassets */,
 				13F4A2A61AED8CA2004662A7 /* Supporting Files */,
 			);
@@ -625,7 +630,6 @@
 					};
 					13F4A2AE1AED8CA2004662A7 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = E54CT5UFJ9;
 					};
 					13F4A2CE1AED973C004662A7 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -754,6 +758,7 @@
 				13F4A2AA1AED8CA2004662A7 /* InterfaceController.m in Sources */,
 				13F4A2C61AED95DC004662A7 /* NetworkManager.m in Sources */,
 				13F4A2C71AED95EA004662A7 /* GCDAsyncUdpSocket.m in Sources */,
+				13C8D6E21AEDEB3200782F5F /* TableRowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

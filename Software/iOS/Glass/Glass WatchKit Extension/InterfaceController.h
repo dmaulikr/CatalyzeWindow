@@ -11,6 +11,8 @@
 
 @interface InterfaceController : WKInterfaceController
 
+@property (nonatomic, assign) IBOutlet WKInterfaceTable *table;
+
 - (IBAction)resetAll;
 
 @end
