@@ -7,15 +7,11 @@
 //
 
 #import "SavedTableViewController.h"
-#import <CoreData/CoreData.h>
-#import "AppDelegate.h"
+#import "WatchCoreDataProxy.h"
+#import "SketchManager.h"
+#import "DataManager.h"
 #import "Sketch.h"
 
-@interface SavedTableViewController () <NSFetchedResultsControllerDelegate>
-
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-
-@end
 
 @implementation SavedTableViewController
 
@@ -27,6 +23,10 @@
     }];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,8 +35,7 @@
 #pragma mark - Table View Selection
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //NSLog(@"Selected Row : %lu", (long)indexPath.row);
-    Sketch *sketch = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Sketch *sketch = [[SketchManager sharedInstance] fetchSketches][indexPath.row];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LoadSketchNotification" object:sketch];
 }
 
@@ -49,7 +48,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.fetchedResultsController fetchedObjects] count];
+    return [[[SketchManager sharedInstance] fetchSketches] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,16 +63,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
+        Sketch *toBeDeleted = [[SketchManager sharedInstance] fetchSketches][indexPath.row];
+        [DataManager deleteManagedObject:(NSManagedObject*)toBeDeleted];
     }
 }
 
@@ -84,52 +75,10 @@
     [cell setSelectedBackgroundView:bgColorView];
     cell.userInteractionEnabled = YES;
     //Device Data
-    Sketch *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Sketch *object = [[SketchManager sharedInstance] fetchSketches][indexPath.row];
     cell.textLabel.text = [[object valueForKey:@"name"] description];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.backgroundColor = [UIColor blackColor];
-}
-
-
-#pragma mark - Fetched Results Controller
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSManagedObjectContext *context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Sketch" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:@"SavedTVCCache"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _fetchedResultsController;
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller{

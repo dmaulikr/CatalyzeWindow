@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		1344B2591A37CA8B009FF88A /* SavedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B2581A37CA8B009FF88A /* SavedTableViewController.m */; };
 		1344B25C1A37CACE009FF88A /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B25B1A37CACE009FF88A /* ContainerViewController.m */; };
-		1344B25F1A37CB5D009FF88A /* Sketch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B25E1A37CB5D009FF88A /* Sketch.m */; };
 		1344B2621A38D0AE009FF88A /* MarchSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B2611A38D0AE009FF88A /* MarchSettingsViewController.m */; };
 		13536F821A37565800815506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13536F811A37565800815506 /* main.m */; };
 		13536F851A37565800815506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13536F841A37565800815506 /* AppDelegate.m */; };
-		13536F881A37565800815506 /* Glass.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13536F861A37565800815506 /* Glass.xcdatamodeld */; };
 		13536F8E1A37565800815506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13536F8C1A37565800815506 /* Main.storyboard */; };
 		13536F901A37565800815506 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13536F8F1A37565800815506 /* Images.xcassets */; };
 		13536F931A37565800815506 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13536F911A37565800815506 /* LaunchScreen.xib */; };
@@ -32,6 +30,7 @@
 		1392BDF41A37704C004305AA /* HRSampleColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDF31A37704C004305AA /* HRSampleColorPickerViewController.m */; };
 		1392BDF71A377D5C004305AA /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDF61A377D5C004305AA /* GCDAsyncUdpSocket.m */; };
 		1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDFD1A377DE2004305AA /* NetworkManager.m */; };
+		13C8D6DE1AEDE98900782F5F /* SketchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8D6DD1AEDE98900782F5F /* SketchManager.m */; };
 		13F4A2AA1AED8CA2004662A7 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2A91AED8CA2004662A7 /* InterfaceController.m */; };
 		13F4A2AC1AED8CA2004662A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F4A2AB1AED8CA2004662A7 /* Images.xcassets */; };
 		13F4A2B01AED8CA2004662A7 /* Glass WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 13F4A2AF1AED8CA2004662A7 /* Glass WatchKit App.app */; };
@@ -45,6 +44,12 @@
 		13F4A2E31AED973D004662A7 /* WatchCoreDataProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2E21AED973D004662A7 /* WatchCoreDataProxyTests.m */; };
 		13F4A2E61AED973D004662A7 /* WatchCoreDataProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F4A2CF1AED973C004662A7 /* WatchCoreDataProxy.framework */; };
 		13F4A2E71AED973D004662A7 /* WatchCoreDataProxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F4A2CF1AED973C004662A7 /* WatchCoreDataProxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13F4A2F01AED98C9004662A7 /* WatchCoreDataProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2EF1AED98C9004662A7 /* WatchCoreDataProxy.m */; };
+		13F4A2F21AED997E004662A7 /* Glass.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13536F861A37565800815506 /* Glass.xcdatamodeld */; };
+		13F4A2F41AED9988004662A7 /* Sketch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B25E1A37CB5D009FF88A /* Sketch.m */; };
+		13F4A2F71AED9BDB004662A7 /* DataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F4A2F51AED9BDB004662A7 /* DataManager.h */; };
+		13F4A2F81AED9BDB004662A7 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F4A2F61AED9BDB004662A7 /* DataManager.m */; };
+		13F4A2FB1AED9D72004662A7 /* SketchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 13F4A2F91AED9D72004662A7 /* SketchManager.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +171,7 @@
 		1392BDF61A377D5C004305AA /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		1392BDFC1A377DE2004305AA /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		1392BDFD1A377DE2004305AA /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		13C8D6DD1AEDE98900782F5F /* SketchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchManager.m; sourceTree = "<group>"; };
 		13F4A2A41AED8CA2004662A7 /* Glass WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Glass WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F4A2A71AED8CA2004662A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F4A2A81AED8CA2004662A7 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 		13F4A2D91AED973C004662A7 /* WatchCoreDataProxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchCoreDataProxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F4A2E11AED973D004662A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F4A2E21AED973D004662A7 /* WatchCoreDataProxyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchCoreDataProxyTests.m; sourceTree = "<group>"; };
+		13F4A2EF1AED98C9004662A7 /* WatchCoreDataProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchCoreDataProxy.m; sourceTree = "<group>"; };
+		13F4A2F51AED9BDB004662A7 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		13F4A2F61AED9BDB004662A7 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		13F4A2F91AED9D72004662A7 /* SketchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +270,6 @@
 				13536F841A37565800815506 /* AppDelegate.m */,
 				1392BDF91A377D73004305AA /* View Controllers */,
 				1392BDF81A377D6D004305AA /* Networking */,
-				1392BDFB1A377D88004305AA /* Data Model */,
 				1392BDFA1A377D7F004305AA /* User Interface */,
 				13536F7F1A37565800815506 /* Supporting Files */,
 			);
@@ -375,6 +384,7 @@
 				1344B25E1A37CB5D009FF88A /* Sketch.m */,
 			);
 			name = "Data Model";
+			path = ../Glass;
 			sourceTree = "<group>";
 		};
 		13F4A2A51AED8CA2004662A7 /* Glass WatchKit Extension */ = {
@@ -418,7 +428,13 @@
 		13F4A2D01AED973C004662A7 /* WatchCoreDataProxy */ = {
 			isa = PBXGroup;
 			children = (
+				1392BDFB1A377D88004305AA /* Data Model */,
 				13F4A2D31AED973C004662A7 /* WatchCoreDataProxy.h */,
+				13F4A2EF1AED98C9004662A7 /* WatchCoreDataProxy.m */,
+				13F4A2F51AED9BDB004662A7 /* DataManager.h */,
+				13F4A2F61AED9BDB004662A7 /* DataManager.m */,
+				13F4A2F91AED9D72004662A7 /* SketchManager.h */,
+				13C8D6DD1AEDE98900782F5F /* SketchManager.m */,
 				13F4A2D11AED973C004662A7 /* Supporting Files */,
 			);
 			path = WatchCoreDataProxy;
@@ -456,7 +472,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F4A2F71AED9BDB004662A7 /* DataManager.h in Headers */,
 				13F4A2D41AED973C004662A7 /* WatchCoreDataProxy.h in Headers */,
+				13F4A2FB1AED9D72004662A7 /* SketchManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +723,6 @@
 				13536F851A37565800815506 /* AppDelegate.m in Sources */,
 				1392BDEF1A376E42004305AA /* HRColorPickerView.m in Sources */,
 				13536F821A37565800815506 /* main.m in Sources */,
-				13536F881A37565800815506 /* Glass.xcdatamodeld in Sources */,
 				1392BDEE1A376E42004305AA /* HRColorMapView.m in Sources */,
 				1392BDEC1A376E42004305AA /* HRColorCursor.m in Sources */,
 				1392BDF11A376E42004305AA /* UIImage+CoreGraphics.m in Sources */,
@@ -715,7 +732,6 @@
 				1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */,
 				1392BDF71A377D5C004305AA /* GCDAsyncUdpSocket.m in Sources */,
 				1392BDF01A376E42004305AA /* HRHSVColorUtil.m in Sources */,
-				1344B25F1A37CB5D009FF88A /* Sketch.m in Sources */,
 				1392BDD11A376167004305AA /* ViewController.m in Sources */,
 				1392BDEA1A376E42004305AA /* HRBrightnessCursor.m in Sources */,
 			);
@@ -743,6 +759,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F4A2F41AED9988004662A7 /* Sketch.m in Sources */,
+				13F4A2F81AED9BDB004662A7 /* DataManager.m in Sources */,
+				13C8D6DE1AEDE98900782F5F /* SketchManager.m in Sources */,
+				13F4A2F21AED997E004662A7 /* Glass.xcdatamodeld in Sources */,
+				13F4A2F01AED98C9004662A7 /* WatchCoreDataProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1168,6 +1189,7 @@
 				13F4A2C11AED8CA2004662A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13F4A2C31AED8CA2004662A7 /* Build configuration list for PBXNativeTarget "Glass WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1176,6 +1198,7 @@
 				13F4A2BF1AED8CA2004662A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13F4A2E81AED973D004662A7 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxy" */ = {
 			isa = XCConfigurationList;
@@ -1184,6 +1207,7 @@
 				13F4A2EA1AED973D004662A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13F4A2EC1AED973D004662A7 /* Build configuration list for PBXNativeTarget "WatchCoreDataProxyTests" */ = {
 			isa = XCConfigurationList;
@@ -1192,6 +1216,7 @@
 				13F4A2EE1AED973D004662A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

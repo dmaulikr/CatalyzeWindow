@@ -7,9 +7,9 @@
 //
 
 #import "ContainerViewController.h"
-#import "Sketch.h"
 #import "NetworkManager.h"
 #import "AppDelegate.h"
+#import "WatchCoreDataProxy.h"
 
 @interface ContainerViewController () <UIAlertViewDelegate>
 
@@ -40,17 +40,7 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         //Save the sketch
-        NSManagedObjectContext *context = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        Sketch *newSketch = [NSEntityDescription insertNewObjectForEntityForName:@"Sketch" inManagedObjectContext:context];
-        newSketch.name = [[alertView textFieldAtIndex:0] text];
-        newSketch.sketchData = [[NetworkManager sharedInstance] mostRecentMatrix];
-        NSError *error = nil;
-        if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
+        [[SketchManager sharedInstance] createSketchWithName:[[alertView textFieldAtIndex:0] text]  data:[[NetworkManager sharedInstance] mostRecentMatrix]];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SketchSavedNotification" object:nil];
     }
 }
