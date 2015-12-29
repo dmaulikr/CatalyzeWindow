@@ -54,7 +54,7 @@ static NetworkManager *sharedInstance = nil;
 
 -(void)sendMessage:(NSString *)message{
     NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-    [self.udpSocket sendData:data toHost:@"192.168.3.2" port:6699 withTimeout:60 tag:-1];
+    [self.udpSocket sendData:data toHost:@"172.16.10.3" port:6699 withTimeout:60 tag:-1];
 }
 
 -(void)askForAutomarchSettings{

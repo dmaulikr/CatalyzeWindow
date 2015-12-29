@@ -630,6 +630,7 @@
 					};
 					13F4A2AE1AED8CA2004662A7 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = E54CT5UFJ9;
 					};
 					13F4A2CE1AED973C004662A7 = {
 						CreatedOnToolsVersion = 6.3.1;
