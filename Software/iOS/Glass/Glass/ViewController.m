@@ -11,8 +11,11 @@
 #import "HRSampleColorPickerViewController.h"
 #import "NetworkManager.h"
 #import "Sketch.h"
+#import "Reachability.h"
 
 @interface ViewController () <MSGridViewDelegate, MSGridViewDataSource, HRColorPickerViewControllerDelegate>
+
+@property (nonatomic) Reachability *reachability;
 
 @end
 
@@ -21,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.reachability = [Reachability reachabilityWithHostName:@"neuromancer.local"];
+
     self.gridView.gridViewDelegate = self;
     self.gridView.gridViewDataSource = self;
     self.selectedColor = [UIColor whiteColor];
@@ -45,6 +50,17 @@
             }];
         }
     }];
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (self.reachability.currentReachabilityStatus == NotReachable ){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *reachabilityAlert = [[UIAlertView alloc] initWithTitle:@"Can't Find Server!" message:@"You must be connected to the Catalyze Chicago WiFi network for live control" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [reachabilityAlert show];
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning {

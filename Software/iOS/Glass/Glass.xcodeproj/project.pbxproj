@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133CB5FE1C751C51002E380A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CB5FD1C751C51002E380A /* Reachability.m */; };
+		133CB6011C751C5B002E380A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133CB6001C751C5B002E380A /* ViewController.m */; };
 		1344B2591A37CA8B009FF88A /* SavedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B2581A37CA8B009FF88A /* SavedTableViewController.m */; };
 		1344B25C1A37CACE009FF88A /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B25B1A37CACE009FF88A /* ContainerViewController.m */; };
 		1344B2621A38D0AE009FF88A /* MarchSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1344B2611A38D0AE009FF88A /* MarchSettingsViewController.m */; };
@@ -16,7 +18,6 @@
 		13536F901A37565800815506 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13536F8F1A37565800815506 /* Images.xcassets */; };
 		13536F931A37565800815506 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13536F911A37565800815506 /* LaunchScreen.xib */; };
 		13536F9F1A37565800815506 /* GlassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 13536F9E1A37565800815506 /* GlassTests.m */; };
-		1392BDD11A376167004305AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDD01A376167004305AA /* ViewController.m */; };
 		1392BDD61A3761C0004305AA /* MSGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDD31A3761C0004305AA /* MSGridView.m */; };
 		1392BDD71A3761C0004305AA /* MSGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDD51A3761C0004305AA /* MSGridViewCell.m */; };
 		1392BDEA1A376E42004305AA /* HRBrightnessCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1392BDDB1A376E42004305AA /* HRBrightnessCursor.m */; };
@@ -125,6 +126,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		133CB5FC1C751C51002E380A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		133CB5FD1C751C51002E380A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		133CB5FF1C751C5B002E380A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		133CB6001C751C5B002E380A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1344B2571A37CA8B009FF88A /* SavedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedTableViewController.h; sourceTree = "<group>"; };
 		1344B2581A37CA8B009FF88A /* SavedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedTableViewController.m; sourceTree = "<group>"; };
 		1344B25A1A37CACE009FF88A /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
@@ -145,8 +150,6 @@
 		13536F981A37565800815506 /* GlassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13536F9D1A37565800815506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13536F9E1A37565800815506 /* GlassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlassTests.m; sourceTree = "<group>"; };
-		1392BDCF1A376167004305AA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1392BDD01A376167004305AA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1392BDD21A3761C0004305AA /* MSGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridView.h; sourceTree = "<group>"; };
 		1392BDD31A3761C0004305AA /* MSGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridView.m; sourceTree = "<group>"; };
 		1392BDD41A3761C0004305AA /* MSGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridViewCell.h; sourceTree = "<group>"; };
@@ -356,8 +359,10 @@
 		1392BDF91A377D73004305AA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1392BDCF1A376167004305AA /* ViewController.h */,
-				1392BDD01A376167004305AA /* ViewController.m */,
+				133CB5FC1C751C51002E380A /* Reachability.h */,
+				133CB5FD1C751C51002E380A /* Reachability.m */,
+				133CB5FF1C751C5B002E380A /* ViewController.h */,
+				133CB6001C751C5B002E380A /* ViewController.m */,
 				1344B2601A38D0AE009FF88A /* MarchSettingsViewController.h */,
 				1344B2611A38D0AE009FF88A /* MarchSettingsViewController.m */,
 				1344B25A1A37CACE009FF88A /* ContainerViewController.h */,
@@ -603,7 +608,7 @@
 		13536F741A37565800815506 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Catalyze Chicago";
 				TargetAttributes = {
 					13536F7B1A37565800815506 = {
@@ -736,10 +741,11 @@
 				1392BDEB1A376E42004305AA /* HRBrightnessSlider.m in Sources */,
 				1344B2621A38D0AE009FF88A /* MarchSettingsViewController.m in Sources */,
 				1344B25C1A37CACE009FF88A /* ContainerViewController.m in Sources */,
+				133CB6011C751C5B002E380A /* ViewController.m in Sources */,
+				133CB5FE1C751C51002E380A /* Reachability.m in Sources */,
 				1392BDFE1A377DE2004305AA /* NetworkManager.m in Sources */,
 				1392BDF71A377D5C004305AA /* GCDAsyncUdpSocket.m in Sources */,
 				1392BDF01A376E42004305AA /* HRHSVColorUtil.m in Sources */,
-				1392BDD11A376167004305AA /* ViewController.m in Sources */,
 				1392BDEA1A376E42004305AA /* HRBrightnessCursor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,6 +872,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -934,6 +941,7 @@
 				INFOPLIST_FILE = Glass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -949,6 +957,7 @@
 				INFOPLIST_FILE = Glass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -968,6 +977,7 @@
 				);
 				INFOPLIST_FILE = GlassTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glass.app/Glass";
 			};
@@ -983,6 +993,7 @@
 				);
 				INFOPLIST_FILE = GlassTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glass.app/Glass";
 			};
@@ -1003,6 +1014,7 @@
 				INFOPLIST_FILE = "Glass WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshbillions.Glass.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1021,6 +1033,7 @@
 				INFOPLIST_FILE = "Glass WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshbillions.Glass.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1042,6 +1055,7 @@
 				IBSC_MODULE = Glass_WatchKit_Extension;
 				INFOPLIST_FILE = "Glass WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshbillions.Glass.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1062,6 +1076,7 @@
 				IBSC_MODULE = Glass_WatchKit_Extension;
 				INFOPLIST_FILE = "Glass WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshbillions.Glass.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1090,6 +1105,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1114,6 +1130,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1137,6 +1154,7 @@
 				INFOPLIST_FILE = WatchCoreDataProxyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glass.app/Glass";
 			};
@@ -1155,6 +1173,7 @@
 				INFOPLIST_FILE = WatchCoreDataProxyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joshbillions.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glass.app/Glass";
 			};
