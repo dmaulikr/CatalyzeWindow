@@ -6,7 +6,7 @@ Our team has always had an interest in creating display systems : [Multi-touch E
 [Harvey Moon](http://unanything.com) was working at [Leviathan](http://www.lvthn.com) at the time, and had done some amazing work with [Lady Ada's Neopixels](https://learn.adafruit.com/adafruit-neopixel-uberguide/overview) in conjunction with Micah Scott's [FadeCandy](https://github.com/scanlime/fadecandy) hardware. We took this knowledge and set out to build out a system that allowed us to individually address each glass 'pixel' in our windows.
 
 
-![Catalyze Window At Night](http://joshbillions.org/catalyze/images/led_wall/IMG_7276.JPG "Catalyze Window At Night")
+![Catalyze Window At Night](https://www.dropbox.com/s/vey224h2fsqhlhw/IMG_7084.jpg?dl=1 "Catalyze Window At Night")
 
 
 The first step along our way was to make sure that the FadeCandies and connections to LED strips and power would be as secure as possible. To do this, we designed up a quick breakout board, and had them produced here in Chicago by our good friends over at [Twisted Traces](https://www.twistedtraces.com). 
