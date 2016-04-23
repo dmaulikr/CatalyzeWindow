@@ -11,21 +11,19 @@ Our team has always had an interest in creating display systems : [Multi-touch E
 
 The first step along our way was to make sure that the FadeCandies and connections to LED strips and power would be as secure as possible. To do this, we designed up a quick breakout board, and had them produced here in Chicago by our good friends over at [Twisted Traces](https://www.twistedtraces.com). 
 
-![PCB](http://joshbillions.org/catalyze/images/led_wall/IMG_1120.JPG "CatalyzeWindow PCB")
+![PCB](https://www.dropbox.com/s/clbok31pnmnaat2/IMG_1120.JPG?dl=1 "CatalyzeWindow PCB")
 
 The [Eagle](http://www.cadsoftusa.com) files for this board are available here in the repo with a full bill of materials (check part attributes in Eagle). [Dave Hull](http://davidhulldesign.com) was kind enough to whip up some awesome laser cut acrylic enclosures that fit our PCBs and housed the 20 Amp 5 Volt power supplies responsbile for powering up the LED strips.
 
-![All Parts Here](http://joshbillions.org/catalyze/images/led_wall/IMG_7209.JPG "All Parts Waiting For Glory")
+![All Parts Here](https://www.dropbox.com/s/o3tpvm8jtv10c7w/IMG_7291.jpg?dl=1 "All Parts Waiting For Glory")
 
 The FadeCandies are limited to 64 pixels per channel, with 8 channels per board, so we built out a plan to cut down each reel of LEDs into strips that would meet these constraints. With all of our NeoPixel (WS2811) reels, FadeCandies, PCBs, and power supplies in hand, we set out to start the long process of cutting down the strips and soldering on connectors.
 
-![Catalyze Team](http://joshbillions.org/catalyze/images/led_wall/IMG_7211.JPG "Dave, Harvey, and Josh on the Assembly Line")
+![Catalyze Team](https://www.dropbox.com/s/xojdsv6mjfgj7z6/IMG_7209.jpg?dl=1 "Dave, Harvey, and Josh on the Assembly Line")
 
 With LED strips cut down, we started work mounting them with small sections of VHB tape.
 
-![Plan](http://joshbillions.org/catalyze/images/led_wall/IMG_6957.jpg "Window Plan")
-
-![Josh Installing Strips](http://joshbillions.org/catalyze/images/led_wall/IMG_7225.JPG "Josh Installing LED Strips")
+![Josh Installing Strips](https://www.dropbox.com/s/1u056q778wj8pa0/installing.jpg?dl=0 "Josh Installing LED Strips")
 
 With all of the LED strips in place and connected to our FadeCandy breakout boards we wired each back to a USB Hub that was under the keen supervision of our [O-DROID C1](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433) running [FadeCandy Server](https://github.com/scanlime/fadecandy/tree/master/server). We then mapped out each of the strips in Processing (available in this repo), and coded up a quick API.
 
