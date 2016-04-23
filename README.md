@@ -23,7 +23,7 @@ The FadeCandies are limited to 64 pixels per channel, with 8 channels per board,
 
 With LED strips cut down, we started work mounting them with small sections of VHB tape.
 
-![Josh Installing Strips](https://www.dropbox.com/s/1u056q778wj8pa0/installing.jpg?dl=0 "Josh Installing LED Strips")
+![Josh Installing Strips](https://www.dropbox.com/s/1u056q778wj8pa0/installing.jpg?dl=1 "Josh Installing LED Strips")
 
 With all of the LED strips in place and connected to our FadeCandy breakout boards we wired each back to a USB Hub that was under the keen supervision of our [O-DROID C1](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141578608433) running [FadeCandy Server](https://github.com/scanlime/fadecandy/tree/master/server). We then mapped out each of the strips in Processing (available in this repo), and coded up a quick API.
 
